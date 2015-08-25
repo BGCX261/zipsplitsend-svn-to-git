@@ -1,0 +1,54 @@
+#summary Motivation zu diesem Programm
+#labels intro,manual
+
+= Einleitung =
+
+Ich supporte eine kleine [http://ich-bin-am-wandern-gewesen.de Community] zu Wanderungen, dazu gehören u.a. Bilder zu diesen Wanderungen. Da dort die Fotoalben mit [http://jalbum.net JAlbum] ins Netz gestellt werden, müssen mir die Kollegen ihre Fotos zu senden und dies kann je nach Account nervig werden (<5 Mb pro Mail...). Deswegen habe ich mich dran gesetzt ein kleines Tool fertigzustellen, dass dies vereinfacht.
+
+== Abhängigkeiten ==
+
+Nein, ich habe das Rad nicht ein entes-Mal erfunden... deswegen müssen folgende Programme installiert sein:
+
+  * Java (>1.4) [http://java.sun.com/]
+  * Ant (>1.6) [http://ant.apache.org/]
+  * Java-Mail (>1.4) [http://java.sun.com/products/javamail/downloads/index.html]
+  * jw_command ([http://www.javaworld.com/javaworld/jw-08-2004/jw-0816-command.html Artikel], nur so lange keine GUI existiert)
+
+
+= Details =
+
+{{{
+ZSM  -d <destfile> [-f <from>] [-h <mailhost>] [-p <password>] [-t <to>]+ [-P propertyfile>] [-g <splitsize>] [-b <betrifft>] Directory|File File File...
+
+  -d <destfile>     : Destinationfile
+  -s <sourcedir>    : Directory of Pictures
+  -f <from>         : From-Address
+  -n <fromname>     : FromName-Address
+  -h <mailhost>     : Mailhost (smtp.web.de)
+  -o <port>         : Mailport (25)
+  -l                : Use SSL
+  -p <password>     : Password to Mail
+  -u <username>     : Username to login
+  -t <to>           : To-Address (multiple)
+  -P <propertyfile> : Property-Datei mit Informationen zu MailHost etc.
+  -g <splitsize>    : Größe der einzelnen Dateien (Default 2Mb).
+  -b <betrifft>     : Subject
+  -v                : Verbose
+}}}
+
+== Property-Datei ==
+In der Property-Datei sollten die _ewig_ gültigen Argumente wie `from`, `fromname` etc. abgespeichert werden. Das Passwort würde ich dort nicht ablegen, da es dort *unverschlüsselt* abgelegt wird.
+
+Beispiel:
+{{{
+from=irgend@wer.de
+fromname=Irgend Wer
+mailhost=smtp.irgendwer.de
+password=passwort
+user=irgend@wer.de
+mailport=25
+usessl=false
+messagetext=Hallo,\n\rhier sind deine gewünschten Bilder.\n\rGruss Jürgen\n\r
+subject=Wanderbilder
+splitsize=3#= 3Mb
+}}}

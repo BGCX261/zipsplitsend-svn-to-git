@@ -1,0 +1,3 @@
+<antlib>
+<taskdef name="split" classname="de.dokutransdata.ant.SplitTask"/>
+</antlib>

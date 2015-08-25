@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<jardesc>
+<jar path="C:/Users/local/bin/zsm.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/ZSM/zsmapp.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="true" mainClassHandleIdentifier="=ZSM/src&lt;de.ich_bin_am_wandern_gewesen{cliApplication.java[cliApplication" manifestLocation="/ZSM/manifest.txt" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+<sealing sealJar="true">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=ZSM/src&lt;de.ich_bin_am_wandern_gewesen.helper"/>
+<javaElement handleIdentifier="=ZSM/src&lt;de.ich_bin_am_wandern_gewesen.ant"/>
+<javaElement handleIdentifier="=ZSM/src&lt;de.ich_bin_am_wandern_gewesen.file"/>
+<javaElement handleIdentifier="=ZSM/src&lt;de.ich_bin_am_wandern_gewesen"/>
+<javaElement handleIdentifier="=ZSM/src&lt;de.ich_bin_am_wandern_gewesen.mail"/>
+</selectedElements>
+</jardesc>

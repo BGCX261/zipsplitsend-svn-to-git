@@ -1,0 +1,11 @@
+#summary Beschreibung der Oberfläche
+#labels gui,screenshot
+
+= Die Oberfläche =
+
+Nach der einfachen CLI-Anwendung ist auch eine Swing-Anwendung verfügbar, diese wird im nachfolgenden beschrieben.
+
+
+= Details =
+
+Screen'n'Shots

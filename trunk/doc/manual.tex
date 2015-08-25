@@ -1,0 +1,155 @@
+\section{Einleitung}
+\label{sec:intro}
+
+Ich supporte eine kleine WebSite
+\htmladdnormallink{http://www.ich-bin-am-wandern-gewesen.de/}{http://www.ich-bin-am-wandern-gewesen.de/}
+mit dem Thema Wanderungen. Unter anderem werden dort die Fotos von
+unseren Wanderungen präsentiert. Leider funktioniert meine
+MiniFestplatte nicht immer (Strom?!?, SDHC etc.\ldots) und deswegen
+müssen \emph{meine} Wanderkameraden(Innen) mir die Fotos per Mail zu
+kommen lassen. Und dies kann \textbf{sehr} mühselig sein, je nachdem
+wieviel MB der MailAccount erlaubt\ldots{} Darum habe ich meine
+Java-Kenntnisse herausgekramt und sogar eine Oberfläche
+programmiert\footnote{Mir hätte ja ein ANT-Script wirklich gereicht.}
+und dieses Progrämmchen möchte ich im nachfolgenden erläutern.
+
+\section{Installation}
+\label{sec:installation}
+
+Man/frau benutze auf Windows das InstallerScript, bei Linux muss ich
+entsprechendes noch umsetzen.
+
+\section{Benutzung}
+\label{sec:using}
+
+\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/oberflaeche}
+\caption{Hauptseite}\label{fig:main:page}
+\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/oberflaeche_mailer}
+\caption{Eingabe der Senderinformationen}\label{fig:mailer:page}
+\end{minipage}
+\end{figure}
+
+Das Programm präsentiert sich mit einer einfachen Oberflächen
+(Abb. \ref{fig:main:page}, \ref{fig:mailer:page}), in dieser hat der
+Anwender seine Mail-Adresse (\code{Von (EMail)}), die Zieladresse
+(\code{An (EMail)} sowie den Host einzugeben. Die Felder
+\code{Zieldatei}, \code{Betrifft} und \code{Nachricht} sind
+Themenbezogen schon vorbelegt. Nach der ersten Anwendung sollten die
+Informationen sowieso abgespeichert werden, so dass beim nächsten
+Start die gespeicherten Werte angezeigt werden\footnote{Vorsicht: Das
+Passwort wird nicht abgespeichert, da dies derzeit im Klartext in
+dieser Datei landet!}.
+
+Als nächstes muss der \code{Host} eingetragen und der
+\code{Port} geändert werden.  Zur Sicherheit ist der \code{Benutzer}
+und das \code{Passwort} einzugeben, der \code{Benutzer} kann
+gleichbedeutend mit der Absenderadresse (\code{Von (EMail)} sein.
+
+In dem Feld \code{Dateigröße} kann die maximale Größe der EMail
+eingestellt werden, der Wert wird als Megabyte-Angabe interpretiert.
+
+\subsection{Versenden eines Bildverzeichnisse}
+\label{sec:send:directory}
+Wie versende ich jetzt ein Verzeichnis mit Bildern:
+\begin{enumerate}
+\item\label{it:an:email} \code{An (EMail)} eingeben.
+\item\label{it:dest:file} \code{Zieldatei} bei Bedarf ändern.
+\item\label{it:subject} \code{Betrifft} nach Situation ändern.
+\item\label{it:message} \code{Nachricht} bearbeiten.
+\item\label{it:von:email} Bei \code{Von (EMail)} deine EMail-Adresse
+eingeben.
+\item\label{it:smtp:server} Bei \code{Server (SMTP)} die Adressse wie
+z.B. \texttt{smtp.web.de} eingeben.
+\item\label{it:mail:port} \code{Port} eventuell ändern. 
+\item\label{it:passwort:user} \code{Passwort} und \code{Benutzername}
+eventuell eingeben, der \code{Benutzername} kann durchaus von
+\code{Von (EMail)} abweichen.
+\item\label{it:file:size} \code{Dateigröße} ändern.
+\item\label{it:save} \code{Datei $->$ Speichern}
+\item\label{it:send:dir} \code{Ausführen $->$ Versende Verzeichnis},
+Verzeichnis auswählen und bestätigen und warten bis die Erfolgsmeldung
+(Abb. \ref{fig:fertig}) erscheint.
+\item Bei Erfolg beendet sich das Programm selber.
+\end{enumerate}
+
+\subsection{Versenden von Bilddateien}
+\label{sec:send:files}
+Beim Versenden von Bilder bitte die Schritte \ref{it:an:email} bis
+\ref{it:save} in Abschnitt \ref{sec:send:directory} durchführen, anschliessend
+\code{Ausführen $->$ Versende Dateien} anwählen, jetzt einzelne Bilder
+anwählen, bestätigen und warten bis die Erfolgsmeldung
+(Abb. \ref{fig:fertig}) erscheint, bei Erfolg beendet sich das
+Programm selber.
+
+\subsection{Fehlermeldungen}
+\label{sec:error:messages}
+Im nachfolgenden die möglichen Fehlermeldungen:
+
+\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_keine_zieladresse}
+\caption{Keine Zieladresse eingegeben}\label{fig:no:to:address}
+\end{minipage}
+%\end{figure}
+%
+%\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_keine_zieldatei}
+\caption{Keine Zieldatei eingegeben}\label{fig:no:destfile}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+%\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_keine_absendeadresse}
+\caption{Keine Absenderadresse eingegeben}\label{fig:no:sender:address}
+%\end{minipage}
+\end{figure}
+%
+\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_kein_host}
+\caption{Kein Mailhost eingegeben}\label{fig:no:mail:host}
+\end{minipage}
+%\end{figure}
+%
+%\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_kein_port}
+\caption{Keinen Mailport eingegeben}\label{fig:no:mail:port}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_kein_benutzer_wenn_passwort}
+\caption{Keinen Benutzer eingegeben}\label{fig:no:user}
+\end{minipage}
+%\end{figure}
+%
+%\begin{figure}[H]
+\begin{minipage}[t]{.45\textwidth}
+\centering\leavevmode
+\includegraphics{images/fehler_kein_passwort_wenn_benutzer}
+\caption{Kein Passwort eingegeben}\label{fig:no:password}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\centering\leavevmode
+\includegraphics{images/fertig_meldung}
+\caption{Es hat alles funktioniert}\label{fig:fertig}
+\end{figure}
+

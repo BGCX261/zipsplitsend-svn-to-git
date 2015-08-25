@@ -1,0 +1,98 @@
+% text-encoding iso-8859-1
+\documentclass[
+12pt,a4paper,
+bibtotocnumbered,    % Literaturverzeichnis im Inhaltsverzeichnis aufführen
+idxtotoc,    % Stichwortverzeichnis im Inhaltsverzeichnis aufführen
+%lortotoc,    % Struktogrammverzeichnis im Inhaltsverzeichnis aufführen
+%lostotocnumbered,    % Sourcecodeverzeichnis im Inhaltsverzeichnis aufführen
+%glototocnumbered,    % Glossar im Inhaltsverzeichnis aufführen
+liststotocnumbered,  % Verzeichnisse (Abbildungen/Tabellen) im Inhaltsverzeichnis aufführen
+twoside,     % Zweiseitiger Druck
+pointlessnumbers, % Kapitelnummern ohne abschliessenden Punkt
+%openright,   % Kapitel öffnen immer auf der rechten Seite, wenn auf Report umgeschaltet wird 
+titlepage,   % Eigenständige Titelseite (spez. für Artikel einschalten)
+abstracton,  % Zusammenfassung ist ein betitelter Abschnitt
+german]{scrartcl}
+\usepackage[latin1]{inputenc}
+\usepackage[headheight=19mm,left=20mm,bottom=35mm,top=35mm]{geometry}%
+\usepackage[T1]{fontenc}
+\usepackage{float,makeidx,german,array,graphicx,bibgerm,pstricks,verbatimfiles}
+\usepackage{scrpage, scrtime}
+%usepackage[hyper]{listings}
+\usepackage{pifont}%,giaAPI,giaColor,local}
+% \ifHtml
+% \else
+\usepackage{mathptmx} 
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+%usepackage{bookman}
+% \fi
+%\usepackage{giaGlossar}%[draft]
+\usepackage[
+colorlinks=false,
+bookmarks,
+%dvips,
+%latex2html,
+pdftitle={HOWTO zu ZipSplitMail},
+pdfcreator={DokuTransData, Aachen},
+pdfproducer={DokuTransData, Aachen},
+pdfauthor={Juergen A.Lamers},
+pdfsubject={Kurzbeschreibung},
+pdfkeywords={Ant, Mail, Zip}
+]{hyperref}
+\usepackage{html}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\ZSM}{\textsc{ZipSplitMail}}
+%% {{{ Titelei
+\date{05.~April 2008}
+%\dedication{me}%% Erzeugt eine neue (Doppel)seite
+\title{\ZSM{}}
+\subject{HowTo}
+\def\shortdescription{Kurzbeschreibung zu \ZSM{}} % Dieser Text erscheint auf
+\author{Jürgen A.Lamers\\
+  \htmladdnormallink{jaloma.ac@googlemail.com}{mailto:jaloma.ac@googlemail.com}
+}
+\input{titlepage.tex}
+% Standarddefinitionen fuer die Titelseite(n)
+%% }}} Titelei
+
+\makeindex
+% Einschalten der Registrierung von Stichwoertern <= makeidx
+
+\let\raggedsection\relax
+% Kapitelueberschriften duerfen getrennt werden
+
+\setcapindent{1em}
+% Bild/Tabellen-Unterschriften werden in der zweiten Zeile 1em eingerückt.
+
+%\lstset{extendedchars=true, style=number_java, frameround=fttt}
+\graphicspath{{./images}}
+
+%\pagestyle{giaMATAStandard}
+\begin{document}
+
+
+\pagenumbering{roman} % Titelei wird mit römischen Ziffern paginiert.
+\maketitle{}
+
+\begin{abstract}
+  Kurze Beschreibung wie das Tool \ZSM{} eingesetzt wird.
+\end{abstract}
+%\clearemptydoublepage{}
+\clearpage{}
+\tableofcontents{}
+%\clearemptydoublepage{}
+\clearpage{}
+
+\pagenumbering{arabic} % 
+\input{manual.tex}
+
+%\nocite{ant:org}
+\nocite{ant:org:manual:develop}
+%\nocite{apache:org}
+\nocite{processing}
+\nocite{sun:java:mail}
+\nocite{eclipse:org}
+\nocite{zipsplitsend}
+\include{appendix}
+\end{document}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/ANT"/>
+	<classpathentry exported="true" kind="lib" path="Y:/External/apache-ant/lib/ant-javamail.jar"/>
+	<classpathentry exported="true" kind="lib" path="Y:/External/apache-ant/lib/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="Y:/External/apache-ant/lib/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="/CLI-Options/lib/options.jar"/>
+	<classpathentry exported="true" kind="lib" path="Y:/External/javamail-1.4.1/lib/smtp.jar"/>
+	<classpathentry kind="lib" path="Y:/External/javamail-1.4.1/lib/mailapi.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
